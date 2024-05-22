@@ -33,12 +33,11 @@ foreign key (studentID) REFERENCES Students(studentID)
 );
 
 
-INSERT INTO Parents(parentID,parentNumber,parentFirstName,parentLastName,studentID,parentPhoneNumber,Restriction) 
-VALUES
-	('1','1','Samantha','West','1001','6459449531',FALSE),
-	('2','2','Jason', 'West','1001','2010939687',TRUE),
+INSERT INTO Parents(parentID,parentNumber,parentFirstName,parentLastName,studentID,parentPhoneNumber,Restriction) VALUES
+    ('1','1','Samantha','West','1001','6459449531',FALSE),
+    ('2','2','Jason', 'West','1001','2010939687',TRUE),
     ('3','1','Leah', 'Daughtler','1002','9028780390',FALSE),
-	('4','2','Skylar', 'Daughtler','1002','7358484397',FALSE),
+    ('4','2','Skylar', 'Daughtler','1002','7358484397',FALSE),
     ('5','1','Eva', 'Brown','1003','2629755404',FALSE),
     ('6','2','Theodore','Brown','1003','6592726829',FALSE),
     ('7','1','Mila', 'Mitchell','1004','2248440137',FALSE),
@@ -102,7 +101,7 @@ SELECT * FROM Classrooms;
 
 #View Student's Parents
 SELECT 
-	Students.studentID,
+    Students.studentID,
     Students.studentFirstName,
     Students.studentLastName,
     ParentOne.parentFirstName as parentOneFirstName,
@@ -123,7 +122,8 @@ AND ParentTwo.parentNumber = 2;
 
 
 
-#View the Saff for each class
+#View the Staff for each class
+	
 SELECT 
 	Classrooms.classroomID,
     Staff1.staffFirstName as LeadFirstName,
@@ -140,12 +140,10 @@ Staff as Staff2 on Staff2.staffID = Classrooms.teacherAideID;
 
 #Classroom assignment  
 
-
 CREATE TABLE classAssignment(
 	studentId int primary key,
     classroomID int
     );
-
 
 
 #Main query for class assignment based on age and gender
@@ -176,11 +174,13 @@ JOIN(
     FROM Classrooms
     ) Classrooms
     ON Students.row_num = Classrooms.row_num AND Students.age = Classrooms.ageGroup;
+	
     
 #view classAssignment table
 
 SELECT * FROM classAssignment;
 
+	
 
 #View Children in their classes based on classAssignment
 
