@@ -185,8 +185,8 @@ SELECT * FROM classAssignment;
 #View Children in their classes based on classAssignment
 
 SELECT 
-	Classrooms.classroomID,
-	Students.studentFirstName,
+    Classrooms.classroomID,
+    Students.studentFirstName,
     Students.studentLastName,
     Students.sex,
     Students.age,
@@ -194,8 +194,8 @@ SELECT
     Classrooms.class,
     Classrooms.ageGroup,
     Classrooms.section,
-	Staff1.staffFirstName as LeadFirstName,
-	Staff1.staffLastName as LeadLastName,
+    Staff1.staffFirstName as LeadFirstName,
+    Staff1.staffLastName as LeadLastName,
     Staff2.staffFirstName as AideFirstName,
     Staff2.staffLastName as AideLastName
 FROM classAssignment
